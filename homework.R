@@ -16,7 +16,13 @@ ds <- read_csv("data_raw/rolling_stone_500.csv")
 #Use a function to check that your conversion succeeded
 
 #ANSWER
-
+glimpse(ds)
+is.numeric(ds$Year)
+#False obviously 
+ds$Year <- as.numeric(ds$Year)
+glimpse(ds)
+is.numeric(ds$Year)
+#True now
 
 ### Question 2 ---------- 
 
@@ -24,8 +30,8 @@ ds <- read_csv("data_raw/rolling_stone_500.csv")
 # change ds so that all of the variables are lowercase
 
 #ANSWER
-
-
+ds <- ds %>% rename_with(tolower)
+print(ds)
 ### Question 3 ----------
 
 # Use mutate to create a new variable in ds that has the decade of the year as a number
