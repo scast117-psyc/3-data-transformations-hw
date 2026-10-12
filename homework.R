@@ -39,8 +39,7 @@ print(ds)
 # Hint: read the documentation for ?floor and make sure year is numeric (from Question 1)
 
 #ANSWER
-
-
+?floor
 ### Question 4 ----------
 
 # Sort the dataset by rank so that 1 is at the top
