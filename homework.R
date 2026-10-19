@@ -44,12 +44,13 @@ ds <- ds %>% mutate(ds, year = floor(year/10))
 print(ds)
 ds <- ds %>% mutate(ds, year = floor(year*10))
 print(ds)
+
 ### Question 4 ----------
 
 # Sort the dataset by rank so that 1 is at the top
-
 #ANSWER
-
+ds <- arrange(ds,(rank))
+print(ds)
 
 ### Question 5 ----------
 
