@@ -58,8 +58,11 @@ print(ds)
 # That just has the artists and songs for the top 10 songs
 
 #ANSWER
-
-
+top10 <- ds %>%
+  filter(rank < 11) %>% 
+  select(artist, song)
+print(top10)
+#BOOM 
 
 ### Question 6 ----------
 
