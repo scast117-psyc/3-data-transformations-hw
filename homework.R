@@ -40,6 +40,8 @@ print(ds)
 
 #ANSWER
 ?floor
+ds <- ds %>% mutate(ds, year = floor(year/1))
+print(ds)
 ### Question 4 ----------
 
 # Sort the dataset by rank so that 1 is at the top
