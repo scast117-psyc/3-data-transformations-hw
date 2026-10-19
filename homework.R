@@ -69,7 +69,7 @@ print(top10)
 # Use summarize to find the earliest, most recent, and average release year
 # and save the results to a new tibble called "ds_sum"
 # Hint, the function drop_na() might help. Read ?drop_na
-
+?drop_na
 #ANSWER
 
 ds_sum <- ds %>% summarize (earliest_year = min(year, na.rm =T),
@@ -86,7 +86,8 @@ print(ds_sum)
 # (this might take some searching to find functions that will help)
 
 #ANSWER
-ds_filtered <- ds %>% filter(year = 1870, 2020, 1976)
+ds_filtered <- ds %>% filter(year == 1870 | year == 2020 | year == 1976)
+arrange(year)
 
 ### Question 8 ---------- 
 
@@ -123,11 +124,10 @@ print(ds_sum)
 #earliest is 1930, most recent = 2020, avg = 1976 
 #Response #7 
 
-ds_filtered <- ds %>% filter(year == 1930 | 2020 | 1976) %>% 
-  arrange(ds_filtered,(year))
+ds_filtered <- ds %>% filter(year == 1930 | year == 2020 | year == 1976) %>% 
+  arrange(year)
 print(ds_filtered)
 # | means OR not commas 
-#Not sure if this is right...
 
 ### Question 9 ---------
 
