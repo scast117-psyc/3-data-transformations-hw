@@ -112,7 +112,7 @@ is.numeric(ds$year)
 ds <- ds %>% mutate(ds, year = floor(year/10))
 ds <- ds %>% mutate(ds, year = floor(year*10))
 print(ds)
-#had to remove "Year" column again...don't know how I made it reappear 
+#had to remove "Year" column again...don't know how I made it reappear lol
 ds$Year <- NULL
 print(ds)
 #okay finally year is fixed for song that was messed up! 
