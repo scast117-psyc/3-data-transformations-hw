@@ -138,7 +138,9 @@ print(ds_filtered)
 # Use the pipe %>% to string the commands together
 
 #ANSWER
-
+ds %>% filter(!is.na(year)) %>% 
+  group_by(year) %>% 
+  summarize(mean(rank, na.rm=T))
 
 ### Question 10 --------
 
@@ -149,7 +151,9 @@ print(ds_filtered)
 # Check against your answers from Question 9 to make sure it matches
 
 #ANSWER
-
-
+?count
+ds %>% count(song, year) %>% slice_max(year)
 ### Question 11 ------
 # Use RStudio's styler to style all the code in your homework
+install.packages("styler")
+library(styler)
