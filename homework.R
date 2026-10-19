@@ -72,6 +72,10 @@ print(top10)
 
 #ANSWER
 
+ds_sum <- ds %>% summarize (earliest_year = min(year, na.rm =T),
+                most_recent_year = max(year, na.rm = T), 
+                avg_year = mean(year, na.rm = T))
+print(ds_sum)
 
 ### Question 7 ----------
 
