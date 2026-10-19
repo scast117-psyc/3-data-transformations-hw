@@ -40,7 +40,9 @@ print(ds)
 
 #ANSWER
 ?floor
-ds <- ds %>% mutate(ds, year = floor(year/1))
+ds <- ds %>% mutate(ds, year = floor(year/10))
+print(ds)
+ds <- ds %>% mutate(ds, year = floor(year*10))
 print(ds)
 ### Question 4 ----------
 
