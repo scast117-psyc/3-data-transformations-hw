@@ -86,9 +86,8 @@ print(ds_sum)
 # (this might take some searching to find functions that will help)
 
 #ANSWER
-ds_filtered <- ds %>% filter(year == 1870 | year == 2020 | year == 1976)
-arrange(year)
-
+ds_filtered <- ds %>% filter(year == 1879 | year == 2020 | year == 1976) %>% arrange(year)
+print(ds_filtered)
 ### Question 8 ---------- 
 
 # There's an error here. The oldest song "Brass in Pocket"
@@ -98,7 +97,7 @@ arrange(year)
 # find the correct oldest, averag-ist, and most recent songs
 
 #ANSWER
-ds <- ds %>% mutate(year = ifelse(year == "1870", "1979", year))
+ds <- ds %>% mutate(year = ifelse(year == "1879", "1979", year))
 print(ds)
 #Worked! 
 class(ds$year)
