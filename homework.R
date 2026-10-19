@@ -86,7 +86,7 @@ print(ds_sum)
 # (this might take some searching to find functions that will help)
 
 #ANSWER
-
+ds_filtered <- ds %>% filter(year = 1870, 2020, 1976)
 
 ### Question 8 ---------- 
 
@@ -97,7 +97,37 @@ print(ds_sum)
 # find the correct oldest, averag-ist, and most recent songs
 
 #ANSWER
+ds <- ds %>% mutate(year = ifelse(year == "1870", "1979", year))
+print(ds)
+#Worked! 
+class(ds$year)
+#got an error and saw that "year" isn't numeric for some reason again
+is.numeric(ds$year)
+#False
+ds$year <- as.numeric(ds$year)
+glimpse(ds)
+is.numeric(ds$year)
+#True now
+ds <- ds %>% mutate(ds, year = floor(year/10))
+ds <- ds %>% mutate(ds, year = floor(year*10))
+print(ds)
+#had to remove "Year" column again...don't know how I made it reappear 
+ds$Year <- NULL
+print(ds)
+#okay finally year is fixed for song that was messed up! 
+#Responses 6
+ds_sum <- ds %>% summarize (earliest_year = min(year, na.rm =T),
+                            most_recent_year = max(year, na.rm = T), 
+                            avg_year = mean(year, na.rm = T))
+print(ds_sum)
+#earliest is 1930, most recent = 2020, avg = 1976 
+#Response #7 
 
+ds_filtered <- ds %>% filter(year == 1930 | 2020 | 1976) %>% 
+  arrange(ds_filtered,(year))
+print(ds_filtered)
+# | means OR not commas 
+#Not sure if this is right...
 
 ### Question 9 ---------
 
